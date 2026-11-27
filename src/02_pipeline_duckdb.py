@@ -122,8 +122,8 @@ def run(con, raw, out):
         ("q_nom_gare_normalise", "Nom de gare modifié (espaces/accents/casse)", "nom normalisé"),
     ]
     union = " UNION ALL ".join(
-        f"SELECT '{c}' AS controle, '{d}' AS description, "
-        f"count(*) FILTER (WHERE {c}) AS nb_lignes, '{a}' AS traitement FROM flagged"
+        f"SELECT '{c}' AS controle, '{d.replace(chr(39), chr(39)*2)}' AS description, "
+        f"count(*) FILTER (WHERE {c}) AS nb_lignes, '{a.replace(chr(39), chr(39)*2)}' AS traitement FROM flagged"
         for c, d, a in issues)
     con.execute(f"CREATE OR REPLACE TABLE rapport_qualite AS {union};")
     print(con.execute("SELECT controle, nb_lignes FROM rapport_qualite").df().to_string(index=False))
