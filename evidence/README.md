@@ -8,9 +8,9 @@ l'identifiant Onyxia, le namespace et la date/heure soient visibles à l'écran.
 | `01_onyxia_services.jpg` | La page « Mes services » d'Onyxia (identifiant visible en haut) |
 | `02_ingest_trace.jpg` | Sortie de `bash src/01_ingest.sh` (taille, colonnes, `mc ls`) |
 | `03_s3_raw.jpg` | `mc ls --recursive s3/$BUCKET/bigdata_project/raw/` ou l'explorateur de fichiers Onyxia |
-| `04_pipeline_trace.jpg` | Sortie de `02_pipeline_duckdb.py` (rapport qualité + top 10 + JSON du run) |
-| `05_s3_processed.jpg` | `mc ls --recursive s3/$BUCKET/bigdata_project/processed/` |
-| `06_verification.jpg` | Sortie de `03_verify_pandas.py` avec « RÉSULTAT DE LA VÉRIFICATION : OK » |
+| `04a/04b/04c_pipeline_trace.jpg` | Sortie de `02_pipeline_duckdb.py` (rapport qualité + top 10 + JSON du run) |
+| `05_s3_processed.png` | `mc ls --recursive s3/$BUCKET/bigdata_project/processed/` |
+| `06_verification.png` | Sortie de `03_verify_pandas.py` avec « RÉSULTAT DE LA VÉRIFICATION : OK » |
 | `07_verification_manuelle.jpg` | Le calcul à la main de la pire liaison (tableur) |
 | `08_benchmark_trace.jpg` | Sortie de `04_benchmark.py` (DuckDB, pandas, Spark, x1 et x100) |
 | `09_spark_ui.jpg` | (option) Interface Spark UI pendant le benchmark |
